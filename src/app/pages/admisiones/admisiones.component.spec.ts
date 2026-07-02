@@ -1,0 +1,23 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { AdmisionesComponent } from './admisiones.component';
+
+describe('AdmisionesComponent', () => {
+  let component: AdmisionesComponent;
+  let fixture: ComponentFixture<AdmisionesComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [AdmisionesComponent]
+    })
+    .compileComponents();
+
+    fixture = TestBed.createComponent(AdmisionesComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});
