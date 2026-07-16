@@ -27,10 +27,30 @@
 
 
 
+<!-- oferta-academica.component.html -->
 
-    
+<div class="slider-container">
+  <div class="slider-track" [style.transform]="'translateX(' + slideIndex * -100 + '%)'">
+    <div class="slide">
+      <img src="img/portada.jpg" alt="Banner 1" />
+    </div>
+    <div class="slide">
+      <img src="img/logo.jpg" alt="Banner 2" />
+    </div>
+  </div>
 
+  <!-- Botones -->
+  <button (click)="cambiarSlide(-1)">‹</button>
+  <button (click)="cambiarSlide(1)">›</button>
 
+  <!-- Puntos -->
+  <div class="dots">
+    <span *ngFor="let _ of [0,1]; let i = index"
+          (click)="slideIndex = i"
+          [class.active]="i === slideIndex">
+    </span>
+  </div>
+</div>
 
 
 
