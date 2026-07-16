@@ -1,1 +1,28 @@
 <p>oferta-academica works!</p>
+
+<div class="oferta-container">
+  <h1 class="titulo-seccion">Oferta Académica</h1>
+  <p class="subtitulo">Conoce nuestros programas técnicos laborales</p>
+
+  <div class="grid-programas">
+    <div class="card-programa" *ngFor="let programa of programas">
+      <div class="card-header">
+        <span class="badge">{{ programa.modalidad }}</span>
+        <h2>{{ programa.titulo }}</h2>
+      </div>
+      <div class="card-body">
+        <p class="descripcion">{{ programa.descripcion }}</p>
+        <div class="meta-info">
+          <span><i class="fas fa-clock"></i> {{ programa.duracion }}</span>
+          <span><i class="fas fa-users"></i> {{ programa.modalidad }}</span>
+        </div>
+        <div *ngIf="programa.homologacion" class="homologacion">
+          <i class="fas fa-graduation-cap"></i> {{ programa.homologacion }}
+        </div>
+      </div>
+      <div class="card-footer">
+        <button class="btn-info">Más información</button>
+      </div>
+    </div>
+  </div>
+</div>
