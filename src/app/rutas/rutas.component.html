@@ -1,6 +1,6 @@
 <!-- BANNER SUPERIOR (Estilo Uniandes) -->
 <div class="top-banner">
-  <strong>Universidad de los Andes</strong> · Excelencia académica con 75 años de historia · <strong>#SomosUniandes</strong>
+  <strong>Cotel</strong> · Excelencia académica con 25 años de historia · <strong>#SomosCotel</strong>
 </div>
 
 <!-- BARRA DE NAVEGACIÓN -->
@@ -27,30 +27,6 @@
 
 
 
-<!-- oferta-academica.component.html -->
-
-<div class="slider-container">
-  <div class="slider-track" [style.transform]="'translateX(' + slideIndex * -100 + '%)'">
-    <div class="slide">
-      <img src="img/portada.jpg" alt="Banner 1" />
-    </div>
-    <div class="slide">
-      <img src="img/logo.jpg" alt="Banner 2" />
-    </div>
-  </div>
-
-  <!-- Botones -->
-  <button (click)="cambiarSlide(-1)">‹</button>
-  <button (click)="cambiarSlide(1)">›</button>
-
-  <!-- Puntos -->
-  <div class="dots">
-    <span *ngFor="let _ of [0,1]; let i = index"
-          (click)="slideIndex = i"
-          [class.active]="i === slideIndex">
-    </span>
-  </div>
-</div>
 
 
 
@@ -58,32 +34,4 @@
 
 
 
-<!-- SECCIÓN PRINCIPAL (HERO) -->
-<section class="hero-section">
-  <h1>Formamos <span class="highlight">líderes</span> para el mundo</h1>
-  <p>
-    En Cotel ofrecemos una educación de excelencia,
-    con programas académicos de vanguardia y un compromiso con la innovación
-    y la transformación social.
-  </p>
-  <a [routerLink]="['/admisiones']" class="btn-cta">Inscríbete ahora</a>
-</section>
 
-<!-- SECCIÓN DE CARDS (Destacados) -->
-<section class="cards-section">
-  <div class="card">
-    <span class="icon">🎓</span>
-    <h3>Pregrado</h3>
-    <p>Más de 30 programas con los más altos estándares de calidad académica.</p>
-  </div>
-  <div class="card">
-    <span class="icon">📚</span>
-    <h3>Posgrado</h3>
-    <p>Especializaciones, maestrías y doctorados para potenciar tu carrera.</p>
-  </div>
-  <div class="card">
-    <span class="icon">🌍</span>
-    <h3>Internacional</h3>
-    <p>Convenios con las mejores universidades del mundo para tu formación global.</p>
-  </div>
-</section>
