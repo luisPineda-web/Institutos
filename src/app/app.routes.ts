@@ -7,6 +7,8 @@ import { MenuComponent } from './pages/menu/menu.component';
 import { ConoceNuestrosProgramasComponent } from './pages/conoce-nuestros-programas/conoce-nuestros-programas.component';
 import { DocentesComponent } from './pages/docentes/docentes.component';
 import { EstudiantesComponent } from './pages/estudiantes/estudiantes.component';
+import { MenuComponentEst } from './pages/estudiantes/menu/menu.componentEst';
+import { EstudianteLoginComponent } from './pages/estudiantes/estudiante-login/estudiante-login.component';
 
 export const routes: Routes = [
 
@@ -55,6 +57,14 @@ export const routes: Routes = [
     {
         path:'Estudiantes',
         component:EstudiantesComponent
+    },
+    {
+        path:'MenuEst',
+        component:MenuComponentEst
+    },
+    {
+        path:'estudiante-login',
+        component:EstudianteLoginComponent
     }
 
     

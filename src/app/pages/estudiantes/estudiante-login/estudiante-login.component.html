@@ -1,0 +1,44 @@
+<p>estudiante-login works!</p>
+
+
+<div class="form-container login-container">
+  <h2>🔑 Ingreso de Estudiante</h2>
+  <p class="subtitle">Ingresa con tu correo y teléfono registrados</p>
+
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="campo">
+      <label for="email">Correo Electrónico *</label>
+      <input id="email" type="email" formControlName="email" placeholder="tuemail@ejemplo.com">
+      @if (f['email'].invalid && (f['email'].touched || enviado)) {
+        <div class="error">
+          @if (f['email'].errors?.['required']) { El correo es obligatorio. }
+          @if (f['email'].errors?.['email']) { Introduce un correo válido. }
+        </div>
+      }
+    </div>
+
+    <div class="campo">
+      <label for="telefono">Teléfono *</label>
+      <input id="telefono" type="tel" formControlName="telefono" placeholder="600123456 (9 dígitos)">
+      @if (f['telefono'].invalid && (f['telefono'].touched || enviado)) {
+        <div class="error">
+          @if (f['telefono'].errors?.['required']) { El teléfono es obligatorio. }
+          @if (f['telefono'].errors?.['pattern']) { Debe tener exactamente 9 dígitos. }
+        </div>
+      }
+    </div>
+
+    <button type="submit" class="btn-submit">Ingresar</button>
+
+    @if (enviado && loginForm.valid) {
+      <div class="success">
+        ✅ ¡Ingreso exitoso! Bienvenido/a <strong>{{ loginForm.value.email }}</strong>.
+      </div>
+    }
+    @if (enviado && loginForm.invalid) {
+      <div class="error-general">
+        ⚠️ Por favor, corrige los campos marcados en rojo.
+      </div>
+    }
+  </form>
+</div>
