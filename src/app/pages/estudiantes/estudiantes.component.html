@@ -1,0 +1,84 @@
+<p>estudiantes works!</p>
+
+
+<div class="form-container">
+  <h2>📚 Registrar Nuevo Estudiante</h2>
+
+  <!-- El formulario se conecta con el TS mediante [formGroup] -->
+  <form [formGroup]="estudianteForm" (ngSubmit)="onSubmit()" novalidate>
+    
+    <!-- Campo: Nombre -->
+    <div class="campo">
+      <label for="nombre">Nombre *</label>
+      <input id="nombre" type="text" formControlName="nombre" placeholder="Ej: Juan">
+      
+      <!-- Mostrar errores SOLO si el campo fue tocado o se intentó enviar -->
+      @if (f['nombre'].invalid && (f['nombre'].touched || enviado)) {
+        <div class="error">
+          @if (f['nombre'].errors?.['required']) { El nombre es obligatorio. }
+          @if (f['nombre'].errors?.['minlength']) { Mínimo 3 caracteres. }
+        </div>
+      }
+    </div>
+
+    <!-- Campo: Apellido -->
+    <div class="campo">
+      <label for="apellido">Apellido *</label>
+      <input id="apellido" type="text" formControlName="apellido" placeholder="Ej: Pérez">
+      @if (f['apellido'].invalid && (f['apellido'].touched || enviado)) {
+        <div class="error">
+          @if (f['apellido'].errors?.['required']) { El apellido es obligatorio. }
+          @if (f['apellido'].errors?.['minlength']) { Mínimo 3 caracteres. }
+        </div>
+      }
+    </div>
+
+    <!-- Campo: Email -->
+    <div class="campo">
+      <label for="email">Email *</label>
+      <input id="email" type="email" formControlName="email" placeholder="ejemplo@correo.com">
+      @if (f['email'].invalid && (f['email'].touched || enviado)) {
+        <div class="error">
+          @if (f['email'].errors?.['required']) { El email es obligatorio. }
+          @if (f['email'].errors?.['email']) { Introduce un email válido. }
+        </div>
+      }
+    </div>
+
+    <!-- Campo: Teléfono -->
+    <div class="campo">
+      <label for="telefono">Teléfono</label>
+      <input id="telefono" type="tel" formControlName="telefono" placeholder="600123456 (9 dígitos)">
+      @if (f['telefono'].invalid && (f['telefono'].touched || enviado)) {
+        <div class="error">El teléfono debe tener 9 dígitos numéricos.</div>
+      }
+    </div>
+
+    <!-- Campo: Curso -->
+    <div class="campo">
+      <label for="curso">Curso / Grado *</label>
+      <select id="curso" formControlName="curso">
+        <option value="" disabled selected>Selecciona un curso...</option>
+        <option value="1ESO">1º ESO</option>
+        <option value="2ESO">2º ESO</option>
+        <option value="3ESO">3º ESO</option>
+        <option value="4ESO">4º ESO</option>
+        <option value="1BACH">1º Bachillerato</option>
+        <option value="2BACH">2º Bachillerato</option>
+      </select>
+      @if (f['curso'].invalid && (f['curso'].touched || enviado)) {
+        <div class="error">Debes seleccionar un curso.</div>
+      }
+    </div>
+
+    <!-- Botón de enviar -->
+    <button type="submit" class="btn-submit">Guardar Estudiante</button>
+
+    <!-- Mensaje de éxito -->
+    @if (enviado && estudianteForm.valid) {
+      <div class="success">
+        ✅ ¡Estudiante registrado con éxito!
+      </div>
+    }
+  </form>
+</div>

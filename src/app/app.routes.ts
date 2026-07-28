@@ -5,6 +5,8 @@ import { OfertaAcademicaComponent } from './pages/oferta-academica/oferta-academ
 import { VidaAcademicaComponent } from './pages/vida-academica/vida-academica.component';
 import { MenuComponent } from './pages/menu/menu.component';
 import { ConoceNuestrosProgramasComponent } from './pages/conoce-nuestros-programas/conoce-nuestros-programas.component';
+import { DocentesComponent } from './pages/docentes/docentes.component';
+import { EstudiantesComponent } from './pages/estudiantes/estudiantes.component';
 
 export const routes: Routes = [
 
@@ -45,6 +47,14 @@ export const routes: Routes = [
     {
         path: 'Menu',
         component: MenuComponent
+    },
+    {
+        path:'Docentes',
+        component:DocentesComponent
+    },
+    {
+        path:'Estudiantes',
+        component:EstudiantesComponent
     }
 
     

@@ -1,0 +1,104 @@
+<p>docentes works!</p>
+
+
+<div class="form-container">
+  <h2>👨‍🏫 Registrar Nuevo Docente</h2>
+
+  <form [formGroup]="docenteForm" (ngSubmit)="onSubmit()" novalidate>
+    
+    <!-- NUEVO CAMPO: Documento -->
+    <div class="campo">
+      <label for="documento">Número de Documento *</label>
+      <input id="documento" type="text" formControlName="documento" placeholder="Ej: 12345678">
+      
+      @if (f['documento'].invalid && (f['documento'].touched || enviado)) {
+        <div class="error">
+          @if (f['documento'].errors?.['required']) { El documento es obligatorio. }
+          @if (f['documento'].errors?.['pattern']) { Debe tener entre 8 y 15 dígitos numéricos. }
+        </div>
+      }
+    </div>
+
+    <!-- Campo: Nombre -->
+    <div class="campo">
+      <label for="nombre">Nombre *</label>
+      <input id="nombre" type="text" formControlName="nombre" placeholder="Ej: María">
+      
+      @if (f['nombre'].invalid && (f['nombre'].touched || enviado)) {
+        <div class="error">
+          @if (f['nombre'].errors?.['required']) { El nombre es obligatorio. }
+          @if (f['nombre'].errors?.['minlength']) { Mínimo 3 caracteres. }
+        </div>
+      }
+    </div>
+
+    <!-- Campo: Apellido -->
+    <div class="campo">
+      <label for="apellido">Apellido *</label>
+      <input id="apellido" type="text" formControlName="apellido" placeholder="Ej: Gómez">
+      
+      @if (f['apellido'].invalid && (f['apellido'].touched || enviado)) {
+        <div class="error">
+          @if (f['apellido'].errors?.['required']) { El apellido es obligatorio. }
+          @if (f['apellido'].errors?.['minlength']) { Mínimo 3 caracteres. }
+        </div>
+      }
+    </div>
+
+    <!-- Campo: Email -->
+    <div class="campo">
+      <label for="email">Email *</label>
+      <input id="email" type="email" formControlName="email" placeholder="docente@instituto.edu">
+      
+      @if (f['email'].invalid && (f['email'].touched || enviado)) {
+        <div class="error">
+          @if (f['email'].errors?.['required']) { El email es obligatorio. }
+          @if (f['email'].errors?.['email']) { Introduce un email válido. }
+        </div>
+      }
+    </div>
+
+    <!-- Campo: Teléfono (modificado para máximo 10 dígitos) -->
+    <div class="campo">
+      <label for="telefono">Teléfono *</label>
+      <input id="telefono" type="tel" formControlName="telefono" placeholder="Ej: 6001234567 (máx. 10 dígitos)">
+      
+      @if (f['telefono'].invalid && (f['telefono'].touched || enviado)) {
+        <div class="error">
+          @if (f['telefono'].errors?.['required']) { El teléfono es obligatorio. }
+          @if (f['telefono'].errors?.['pattern']) { Solo números y máximo 10 dígitos. }
+        </div>
+      }
+    </div>
+
+    <!-- Campo: Asignatura / Especialidad (renombrado para docentes) -->
+    <div class="campo">
+      <label for="asignatura">Asignatura o Especialidad *</label>
+      <select id="asignatura" formControlName="asignatura">
+        <option value="" disabled selected>Selecciona una asignatura...</option>
+        <option value="Matemáticas">Matemáticas</option>
+        <option value="Lengua">Lengua y Literatura</option>
+        <option value="Inglés">Inglés</option>
+        <option value="Física">Física y Química</option>
+        <option value="Historia">Historia</option>
+        <option value="Informática">Informática</option>
+        <option value="Deporte">Educación Física</option>
+        <option value="Arte">Arte</option>
+      </select>
+      
+      @if (f['asignatura'].invalid && (f['asignatura'].touched || enviado)) {
+        <div class="error">Debes seleccionar una asignatura o especialidad.</div>
+      }
+    </div>
+
+    <!-- Botón de enviar -->
+    <button type="submit" class="btn-submit">Guardar Docente</button>
+
+    <!-- Mensaje de éxito -->
+    @if (enviado && docenteForm.valid) {
+      <div class="success">
+        ✅ ¡Docente registrado con éxito!
+      </div>
+    }
+  </form>
+</div>
