@@ -8,14 +8,33 @@
 
 /* --- ENCABEZADO SUPERIOR (Banner Negro con eslogan) --- */
 .top-banner {
-  background-color: #000000; /* Negro institucional */
+  position: relative;           /* 🔥 Necesario para que el .banner-logo se posicione dentro */
+  background-color: #000000;
   color: #FFFFFF;
-  text-align: center;
-  padding: 12px 20px;
+  text-align: center;           /* Sigue centrando el texto */
+  padding: 12px 20px 12px 60px; /* 🔥 Aumentamos padding izquierdo para dejar espacio al logo */
   font-size: 0.9rem;
   letter-spacing: 1px;
-  border-bottom: 3px solid #FFD100; /* Línea amarilla institucional */
+  border-bottom: 3px solid #FFD100;
+  /* Opcional: usar flex para centrar el contenido verticalmente */
+  display: flex;
+  align-items: center;          /* Centra verticalmente el texto (y la imagen también si no usáramos absoluto) */
+  justify-content: center;      /* Mantiene el texto centrado horizontalmente */
+  min-height: 3em;              /* Evita que el banner se encoja si el texto es corto */
 }
+
+.banner-logo {
+  position: absolute;
+  left: 12px;                   /* Separación del borde izquierdo (ajústalo a tu gusto) */
+  top: 50%;                     /* Coloca el borde superior de la imagen en el 50% */
+  transform: translateY(-50%);  /* Desplaza hacia arriba la mitad de su altura → centrado perfecto */
+  height: 2.5em;                  /* 2 veces el tamaño de la letra (ajústalo: 1em, 1.5em, etc.) */
+  width: auto;
+  /* Si la imagen tiene fondo oscuro, puedes agregar un filtro para que se vea bien sobre negro */
+  /* filter: brightness(0) invert(1);  /* Esto la haría blanca si es un logo oscuro */ 
+}
+
+
 
 .top-banner strong {
   color: #FFD100; /* Amarillo institucional para resaltar */
@@ -165,6 +184,9 @@
   font-size: 0.95rem;
   line-height: 1.5;
 }
+
+
+
 
 
 
