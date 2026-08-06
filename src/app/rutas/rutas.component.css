@@ -8,36 +8,32 @@
 
 /* --- ENCABEZADO SUPERIOR (Banner Negro con eslogan) --- */
 .top-banner {
-  position: relative;           /* 🔥 Necesario para que el .banner-logo se posicione dentro */
-  background-color: #000000;
+  position: relative;           
+  background-color: #000000;    
   color: #FFFFFF;
-  text-align: center;           /* Sigue centrando el texto */
-  padding: 12px 20px 12px 60px; /* 🔥 Aumentamos padding izquierdo para dejar espacio al logo */
+  text-align: center;           
+  padding: 12px 20px 12px 60px; 
   font-size: 0.9rem;
   letter-spacing: 1px;
-  border-bottom: 3px solid #FFD100;
-  /* Opcional: usar flex para centrar el contenido verticalmente */
+  border-bottom: 3px solid #1A73E8;  /* 🔵 ANTES: #FFD100 (amarillo) → AHORA: azul */
   display: flex;
-  align-items: center;          /* Centra verticalmente el texto (y la imagen también si no usáramos absoluto) */
-  justify-content: center;      /* Mantiene el texto centrado horizontalmente */
-  min-height: 3em;              /* Evita que el banner se encoja si el texto es corto */
+  align-items: center;          
+  justify-content: center;      
+  min-height: 3em;              
 }
 
 .banner-logo {
   position: absolute;
-  left: 12px;                   /* Separación del borde izquierdo (ajústalo a tu gusto) */
-  top: 50%;                     /* Coloca el borde superior de la imagen en el 50% */
-  transform: translateY(-50%);  /* Desplaza hacia arriba la mitad de su altura → centrado perfecto */
-  height: 2.5em;                  /* 2 veces el tamaño de la letra (ajústalo: 1em, 1.5em, etc.) */
+  left: 12px;                   
+  top: 50%;                     
+  transform: translateY(-50%);  
+  height: 2.5em;                
   width: auto;
-  /* Si la imagen tiene fondo oscuro, puedes agregar un filtro para que se vea bien sobre negro */
-  /* filter: brightness(0) invert(1);  /* Esto la haría blanca si es un logo oscuro */ 
+  /* filter: brightness(0) invert(1); */
 }
 
-
-
 .top-banner strong {
-  color: #FFD100; /* Amarillo institucional para resaltar */
+  color: #1A73E8;  /* 🔵 ANTES: #FFD100 (amarillo) → AHORA: azul para resaltar */
   font-weight: 700;
 }
 
@@ -64,7 +60,7 @@
 }
 
 .nav-brand span {
-  color: #FFD100; /* Amarillo para la palabra "Andes" */
+  color: #1A73E8;  /* 🔵 ANTES: #FFD100 (amarillo) → AHORA: azul para la palabra "Andes" */
 }
 
 /* Lista de enlaces de navegación */
@@ -92,8 +88,8 @@
 
 /* Enlace activo (simula la navegación de Angular) */
 .nav-links li a.active-link {
-  background-color: #FFD100;
-  color: #000000;
+  background-color: #1A73E8;  /* 🔵 ANTES: #FFD100 (amarillo) → AHORA: azul */
+  color: #FFFFFF;  /* 🔵 ANTES: #000000 (negro) → AHORA: blanco para mejor contraste sobre azul */
   font-weight: 600;
 }
 
@@ -103,7 +99,7 @@
   color: white;
   padding: 80px 40px;
   text-align: center;
-  border-bottom: 5px solid #FFD100;
+  border-bottom: 5px solid #1A73E8;  /* 🔵 ANTES: #FFD100 (amarillo) → AHORA: azul */
 }
 
 .hero-section h1 {
@@ -114,7 +110,7 @@
 }
 
 .hero-section h1 .highlight {
-  color: #FFD100;
+  color: #1A73E8;  /* 🔵 ANTES: #FFD100 (amarillo) → AHORA: azul */
 }
 
 .hero-section p {
@@ -126,8 +122,8 @@
 
 .hero-section .btn-cta {
   display: inline-block;
-  background-color: #FFD100;
-  color: #000000;
+  background-color: #1A73E8;  /* 🔵 ANTES: #FFD100 (amarillo) → AHORA: azul */
+  color: #FFFFFF;  /* 🔵 ANTES: #000000 (negro) → AHORA: blanco para mejor contraste sobre azul */
   padding: 14px 40px;
   font-weight: 700;
   text-decoration: none;
@@ -138,7 +134,7 @@
 
 .hero-section .btn-cta:hover {
   transform: scale(1.03);
-  box-shadow: 0 8px 25px rgba(255, 209, 0, 0.3);
+  box-shadow: 0 8px 25px rgba(26, 115, 232, 0.3);  /* 🔵 ANTES: rgba(255, 209, 0, 0.3) (amarillo) → AHORA: azul */
 }
 
 /* --- SECCIÓN DE CARDS (Destacados) --- */
@@ -158,7 +154,7 @@
   width: 280px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
   transition: transform 0.2s, box-shadow 0.2s;
-  border-top: 4px solid #FFD100;
+  border-top: 4px solid #1A73E8;  /* 🔵 ANTES: #FFD100 (amarillo) → AHORA: azul */
   text-align: center;
 }
 
@@ -184,13 +180,3 @@
   font-size: 0.95rem;
   line-height: 1.5;
 }
-
-
-
-
-
-
-
-
-
-
