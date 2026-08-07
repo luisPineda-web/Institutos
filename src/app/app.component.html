@@ -8,3 +8,43 @@
 <section class="mx-5 mt-2">
   <router-outlet />
 </section>
+
+
+<!-- ===== NUEVO CÓDIGO PARA PRUEBA DE CONEXIÓN ===== -->
+<div style="padding:20px;margin:20px;border:2px solid #007bff;border-radius:10px;font-family:Arial">
+  <h2>🧪 Prueba de conexión MySQL</h2>
+  
+  <!-- Estado de conexión -->
+  <div *ngIf="conexionExitosa" style="color:green;font-weight:bold">
+    ✅ Conexión exitosa! {{ usuarios.length }} registros encontrados
+  </div>
+  <div *ngIf="!conexionExitosa && usuarios.length === 0" style="color:red;font-weight:bold">
+    ❌ Sin conexión - ¿El servidor está corriendo en http://localhost:3000?
+  </div>
+
+  <!-- Formulario para agregar -->
+  <div style="margin:20px 0">
+    <h3>➕ Agregar usuario</h3>
+    <input [(ngModel)]="nuevo.nombre" placeholder="Nombre" style="padding:8px;margin:5px">
+    <input [(ngModel)]="nuevo.email" placeholder="Email" style="padding:8px;margin:5px">
+    <button (click)="agregarUsuario()" style="padding:8px 20px;background:#007bff;color:white;border:none;border-radius:5px;cursor:pointer">
+      Agregar
+    </button>
+  </div>
+
+  <!-- Lista de usuarios -->
+  <div>
+    <h3>📋 Lista de usuarios</h3>
+    <ul>
+      <li *ngFor="let user of usuarios" style="padding:5px;border-bottom:1px solid #ddd">
+        {{ user.id }} - {{ user.nombre }} ({{ user.email }})
+      </li>
+    </ul>
+  </div>
+
+  <!-- Botón recargar -->
+  <button (click)="cargarUsuarios()" style="padding:8px 20px;background:#28a745;color:white;border:none;border-radius:5px;cursor:pointer">
+    🔄 Recargar
+  </button>
+</div>
+<!-- ===== FIN NUEVO CÓDIGO ===== -->
