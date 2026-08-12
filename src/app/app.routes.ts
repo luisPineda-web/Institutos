@@ -9,6 +9,7 @@ import { DocentesComponent } from './pages/docentes/docentes.component';
 import { EstudiantesComponent } from './pages/estudiantes/estudiantes.component';
 import { MenuComponentEst } from './pages/estudiantes/menu/menu.componentEst';
 import { EstudianteLoginComponent } from './pages/estudiantes/estudiante-login/estudiante-login.component';
+import { LoginComponent } from './pages/login/login.component';
 
 export const routes: Routes = [
 
@@ -65,6 +66,10 @@ export const routes: Routes = [
     {
         path:'estudiante-login',
         component:EstudianteLoginComponent
+    },
+     {
+        path:'LOGIN',
+        component:LoginComponent
     }
 
     
